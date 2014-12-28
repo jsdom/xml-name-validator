@@ -9,10 +9,28 @@ This package simply tells you whether or not a string matches the [`Name`](http:
 var xnv = require("xml-name-validator");
 var assert = require("assert");
 
-assert(xnv.name("abc") === true);
-assert(xnv.name("123") === false);
+// Will not throw:
+xnv.name("x");
+xnv.name(":");
+xnv.name("a:0");
+xnv.name("a:b:c");
 
-assert(xnv.qname("abc") === true);
-assert(xnv.qname("abc:xyz") === true);
-assert(xnv.qname("abc:xyz:rst") === false);
+// Will throw:
+xnv.name("\\");
+xnv.name("'");
+xnv.name("0");
+xnv.name("a!");
+
+// Will not throw:
+xnv.qname("x");
+xnv.qname("a0");
+xnv.qname("a:b");
+
+// Will throw:
+xnv.qname(":a");
+xnv.qname(":b");
+xnv.qname("a:b:c");
+xnv.qname("a:0");
 ```
+
+In all the cases where the validator throws, it will throw an instance of `xnv.SyntaxError` with an informative `message` property, among others.
