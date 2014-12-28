@@ -1,0 +1,26 @@
+{
+  "name": "xml-name-validator",
+  "description": "Validates whether a string matches the production for an XML name or qualified name",
+  "keywords": [
+    "xml",
+    "name",
+    "qname"
+  ],
+  "version": "1.0.0-pre",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "WTFPL",
+  "repository": "jsdom/xml-name-validator",
+  "main": "lib/xml-name-validator.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "lint": "jshint lib && jscs lib"
+  },
+  "devDependencies": {
+    "jscs": "^1.8.1",
+    "jshint": "^2.5.10",
+    "mocha": "^2.0.1"
+  }
+}
