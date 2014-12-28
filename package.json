@@ -15,12 +15,15 @@
     "lib/"
   ],
   "scripts": {
+    "prepublish": "node scripts/generate-grammar.js < lib/grammar.pegjs > lib/generated-parser.js",
+    "pretest": "npm run prepublish",
     "test": "mocha",
     "lint": "jshint lib && jscs lib"
   },
   "devDependencies": {
     "jscs": "^1.8.1",
     "jshint": "^2.5.10",
-    "mocha": "^2.0.1"
+    "mocha": "^2.0.1",
+    "pegjs": "0.8.0"
   }
 }
