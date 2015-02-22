@@ -6,7 +6,7 @@
     "name",
     "qname"
   ],
-  "version": "2.0.0",
+  "version": "1.0.0",
   "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "WTFPL",
   "repository": "jsdom/xml-name-validator",
@@ -24,6 +24,6 @@
     "jscs": "^1.8.1",
     "jshint": "^2.5.10",
     "mocha": "^2.0.1",
-    "waka": "^0.1.0"
+    "pegjs": "0.8.0"
   }
 }

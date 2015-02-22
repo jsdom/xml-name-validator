@@ -1,12 +1,12 @@
 "use strict";
-var waka = require("waka");
+var pegjs = require("pegjs");
 
 var grammarText = "";
 process.stdin.on("data", function (data) {
     grammarText += data;
 });
 process.stdin.on("end", function () {
-    var parserSource = waka.getSourceStandalone(grammarText, { startRule: null });
+    var parserSource = pegjs.buildParser(grammarText, { output: "source", allowedStartRules: ["Name", "QName"] });
     process.stdout.write("module.exports = ");
     process.stdout.write(parserSource);
 });
