@@ -1,12 +1,12 @@
 "use strict";
-var waka = require("waka");
+const waka = require("waka");
 
-var grammarText = "";
-process.stdin.on("data", function (data) {
+let grammarText = "";
+process.stdin.on("data", data => {
     grammarText += data;
 });
-process.stdin.on("end", function () {
-    var parserSource = waka.getSourceStandalone(grammarText, { startRule: null });
+process.stdin.on("end", () => {
+    const parserSource = waka.getSourceStandalone(grammarText, { startRule: null });
     process.stdout.write("module.exports = ");
     process.stdout.write(parserSource);
 });

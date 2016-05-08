@@ -18,12 +18,11 @@
     "prepublish": "node scripts/generate-grammar.js < lib/grammar.pegjs > lib/generated-parser.js",
     "pretest": "npm run prepublish",
     "test": "mocha",
-    "lint": "jshint lib && jscs lib"
+    "lint": "eslint ."
   },
   "devDependencies": {
-    "jscs": "^1.8.1",
-    "jshint": "^2.5.10",
-    "mocha": "^2.0.1",
+    "eslint": "^2.9.0",
+    "mocha": "^2.4.5",
     "waka": "0.1.2"
   }
 }

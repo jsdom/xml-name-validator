@@ -1,7 +1,0 @@
-{
-    "excludeFiles": ["lib/generated-parser.js"],
-    "preset": "crockford",
-    "requireMultipleVarDecl": null,
-    "disallowDanglingUnderscores": null,
-    "validateQuoteMarks": "\""
-}
