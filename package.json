@@ -8,7 +8,7 @@
   ],
   "version": "2.0.1",
   "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
-  "license": "WTFPL",
+  "license": "Apache-2.0",
   "repository": "jsdom/xml-name-validator",
   "main": "lib/xml-name-validator.js",
   "files": [
