@@ -3,5 +3,9 @@
   "extends": "@domenic",
   "env": {
     "node": true
+  },
+  "rules": {
+    "max-len": ["error", { "ignoreRegExpLiterals": true }],
+    "no-misleading-character-class": "off"
   }
 }
