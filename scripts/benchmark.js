@@ -1,8 +1,8 @@
 "use strict";
 /* eslint-disable no-console */
-const xnv = require("..");
+const assert = require("node:assert");
 const Benchmark = require("benchmark");
-const assert = require("assert");
+const xnv = require("..");
 const cases = require("../test/cases.json");
 
 const benchmark = new Benchmark(() => {
