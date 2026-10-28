@@ -7,7 +7,7 @@ This package simply tells you whether or not a string matches the [`Name`](http:
 This package's main module exports two functions, `name()` and `qname()`. Both take a string and return a boolean indicating whether or not the string matches the relevant production.
 
 ```js
-"use strict":
+"use strict";
 const xnv = require("xml-name-validator");
 
 // Will return true

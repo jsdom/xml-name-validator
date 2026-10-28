@@ -1,30 +1,40 @@
 {
   "name": "xml-name-validator",
+  "version": "5.0.0",
   "description": "Validates whether a string matches the production for an XML name or qualified name",
   "keywords": [
-    "xml",
     "name",
-    "qname"
+    "qname",
+    "xml"
   ],
-  "version": "5.0.0",
-  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "Apache-2.0",
-  "repository": "jsdom/xml-name-validator",
-  "main": "lib/xml-name-validator.js",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsdom/xml-name-validator.git"
+  },
   "files": [
     "lib/"
   ],
+  "main": "lib/xml-name-validator.js",
   "scripts": {
     "test": "node --test",
-    "benchmark": "node scripts/benchmark.js",
-    "lint": "eslint ."
+    "benchmark": "node scripts/benchmark.mjs",
+    "check": "npm run lint && npm run fmt:check",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "devDependencies": {
-    "@domenic/eslint-config": "^3.0.0",
-    "benchmark": "^2.1.4",
-    "eslint": "^8.53.0"
+    "@domenic/eslint-config": "^6.0.0",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "oxfmt": "0.75.0",
+    "tinybench": "^6.2.2"
   },
   "engines": {
-    "node": ">=18"
+    "node": "^22.14.0 || >=24.0.0"
   }
 }
