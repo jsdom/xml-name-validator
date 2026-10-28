@@ -1,11 +1,14 @@
-"use strict";
 /* eslint-disable no-console */
-const assert = require("node:assert");
-const Benchmark = require("benchmark");
-const xnv = require("..");
-const cases = require("../test/cases.json");
+import assert from "node:assert/strict";
 
-const benchmark = new Benchmark(() => {
+import { Bench } from "tinybench";
+
+import xnv from "../lib/xml-name-validator.js";
+import cases from "../test/cases.json" with { type: "json" };
+
+const bench = new Bench({ throws: true });
+
+bench.add("XML names and qualified names", () => {
   for (const input of cases.name.valid) {
     assert.strictEqual(xnv.name(input), true);
   }
@@ -21,5 +24,5 @@ const benchmark = new Benchmark(() => {
   }
 });
 
-benchmark.on("cycle", e => console.log(e.target.toString()));
-benchmark.run();
+await bench.run();
+console.table(bench.table());
