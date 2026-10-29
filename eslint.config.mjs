@@ -3,6 +3,8 @@ import domenicStylisticConfig from "@domenic/eslint-config/stylistic";
 import globals from "globals";
 
 export default [
+  ...domenicConfig,
+  ...domenicStylisticConfig,
   {
     files: ["**/*.js"],
     languageOptions: {
@@ -13,11 +15,9 @@ export default [
   {
     files: ["**/*.mjs"],
     languageOptions: {
-      globals: globals.node,
+      globals: globals.nodeBuiltin,
     },
   },
-  ...domenicConfig,
-  ...domenicStylisticConfig,
   {
     rules: {
       "no-misleading-character-class": "off",
